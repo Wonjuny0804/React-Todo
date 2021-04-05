@@ -1,14 +1,12 @@
-import AddTodoButton from 'components/AddTodoButton/AddTodoButton';
-import { TodoItem, WeeklyTodoList } from 'containers';
-import Header from 'containers/Header/Header';
+import { TodoListApp } from 'pages';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <WeeklyTodoList />
-    </div>
-  );
+  <>
+    <TodoListApp />
+  </>
+  )
+  ;
 }
 
 export default App;
