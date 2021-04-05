@@ -3,6 +3,7 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import { editIcon, deleteIcon, completed } from './TodoItem.module.scss';
 
+
 const TodoItem = ({ value }) => {
   const [checked, setChecked] = useState(false);
 
@@ -11,6 +12,7 @@ const TodoItem = ({ value }) => {
 
   const onTodoStatusChange = (e) => {
     setChecked(e.target.checked);
+    console.log(e.target);
   };
 
   return (

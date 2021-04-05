@@ -37,7 +37,7 @@ export const removeTodoAction = willRemoveTodo => ({
 
 const initialState = {}
 
-getThisWeek.forEach(day => {
+getThisWeek().forEach(day => {
   initialState[day] = [];
 });
 
