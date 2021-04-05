@@ -4,13 +4,13 @@ import { todoListHeading, dailyTodoList } from './WeeklyTodoList.module.scss';
 import { Heading } from 'components';
 import { DailyTodoList } from 'containers';
 
-const WeeklyTodoList = ({ ...restProps }) => {
+const WeeklyTodoList = ({ containerClassName, ...restProps }) => {
   const thisWeek = getThisWeek();
   const todoState = useSelector((state) => state.todo);
   console.log(todoState);
 
   return (
-    <ul>
+    <ul className={containerClassName}>
       {thisWeek.map((day) => {
         const key = day.split(' ')[0];
         return (

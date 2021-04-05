@@ -1,1 +1,1 @@
-export {default as getThisWeek } from './getThisWeek'
+export { default as getThisWeek } from './getThisWeek';
