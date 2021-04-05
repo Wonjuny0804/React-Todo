@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import SelectBox from '../../components/SelectBox/SelectBox';
 import Button from '../../components/Button/Button';
 import {
@@ -10,19 +11,41 @@ import {
   dialogHeading,
 } from './Dialog.module.scss';
 import Heading from 'components/Heading/Heading';
+import { addTodoAction, editTodoAction } from 'redux/storage/Todos/Todos';
 
 const Dialog = ({ headline, buttonText, setIsDialogShow }) => {
   const textareaRef = useRef(null);
+  const [dialogName, setDialogName] = useState('');
   const [inputText, setInputText] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
+
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.todo);
+
+  useEffect(() => {
+    setDialogName(headline);
+  }, [headline]);
 
   const handleTextarea = (e) => {
     setInputText(textareaRef.current.value);
   };
-  const handleCloseButton = () => {
+  const handleCloseDialog = () => {
     setIsDialogShow(false);
   };
-  const handleAddandEditButton = () => {
-    console.log(textareaRef.current.value);
+  const handleAddandEditTodo = () => {
+    if (headline === 'Add a task') {
+      const nextId =
+        Math.max(...state[selectedDate].map(({ id }) => id), 0) + 1;
+
+      dispatch(
+        addTodoAction(selectedDate, {
+          id: nextId,
+          content: inputText,
+          completed: false,
+        })
+      );
+    }
+    console.log(state);
   };
 
   return (
@@ -32,9 +55,9 @@ const Dialog = ({ headline, buttonText, setIsDialogShow }) => {
         title="close icon"
         shape="close"
         className={closeBtn}
-        onClick={handleCloseButton}
+        onClick={handleCloseDialog}
       />
-      <SelectBox className={selectBox} />
+      <SelectBox className={selectBox} setDateState={setSelectedDate} />
       <textarea
         ref={textareaRef}
         name="textarea"
@@ -44,10 +67,10 @@ const Dialog = ({ headline, buttonText, setIsDialogShow }) => {
         onChange={handleTextarea}
         value={inputText}></textarea>
       <Button
-        type="submit"
+        type="button"
         content={buttonText}
         className={addBtn}
-        onClick={handleAddandEditButton}
+        onClick={handleAddandEditTodo}
       />
     </form>
   );

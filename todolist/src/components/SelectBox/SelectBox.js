@@ -11,7 +11,7 @@ import {
 } from './SelectBox.module.scss';
 import classNames from 'classnames';
 
-const SelectBox = ({ className }) => {
+const SelectBox = ({ className, setDateState }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const selectBoxContainerClasses = classNames(
@@ -25,7 +25,7 @@ const SelectBox = ({ className }) => {
     setIsOpened(!isOpened);
   };
   const handleItemClick = (e) => {
-    const date = e.target.textContent;
+    setDateState(e.target.textContent);
     setIsOpened(false);
   };
 
