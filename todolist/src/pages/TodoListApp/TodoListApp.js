@@ -30,7 +30,7 @@ const TodoListApp = () => {
         shape="plus"
         iconClassName={plusIcon}
       />
-      {isDialogShow && <ModalDialog />}
+      {isDialogShow && <ModalDialog setIsDialogShow={setIsDialogShow} />}
       <WeeklyTodoList containerClassName={weeklyTodoList} />
     </div>
   );

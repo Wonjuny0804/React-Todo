@@ -38,8 +38,8 @@ const SelectBox = ({ className, setDateState }) => {
         content="Date"
         className={selectButton}
         onClick={handleButtonClick}
-        title={isOpened ? 'arrow down icon' : 'arrow up icon'}
-        shape={isOpened ? 'arrowDown' : 'arrowUp'}
+        title={isOpened ? 'arrow up icon' : 'arrow down icon'}
+        shape={isOpened ? 'arrowUp' : 'arrowDown'}
       />
       <ul className={selectBoxClasses}>
         {thisWeek.map((day) => {

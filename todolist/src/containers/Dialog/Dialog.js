@@ -8,10 +8,12 @@ import {
   selectBox,
   textarea,
   addBtn,
+  dialogHeading,
 } from './Dialog.module.scss';
+import Heading from 'components/Heading/Heading';
 import { addTodoAction, editTodoAction } from 'redux/storage/Todos/Todos';
 
-const Dialog = ({ headline, buttonText }) => {
+const Dialog = ({ headline, buttonText, setIsDialogShow }) => {
   const textareaRef = useRef(null);
   const [dialogName, setDialogName] = useState('');
   const [inputText, setInputText] = useState('');
@@ -26,6 +28,9 @@ const Dialog = ({ headline, buttonText }) => {
 
   const handleTextarea = (e) => {
     setInputText(textareaRef.current.value);
+  };
+  const handleCloseDialog = () => {
+    setIsDialogShow(false);
   };
   const handleAddandEditTodo = () => {
     if (headline === 'Add a task') {
@@ -42,20 +47,10 @@ const Dialog = ({ headline, buttonText }) => {
     }
     console.log(state);
   };
-  const handleCloseDialog = () => {};
 
   return (
     <form className={dialog}>
-      <h2
-        style={{
-          color: '#FFA1B2',
-          fontSize: 14,
-          marginTop: 0,
-          marginBottom: 5,
-        }}
-      >
-        {headline}
-      </h2>
+      <Heading level={2} children={headline} className={dialogHeading} />
       <Button
         title="close icon"
         shape="close"
@@ -70,8 +65,7 @@ const Dialog = ({ headline, buttonText }) => {
         className={textarea}
         placeholder="Write your task..."
         onChange={handleTextarea}
-        value={inputText}
-      ></textarea>
+        value={inputText}></textarea>
       <Button
         type="button"
         content={buttonText}
