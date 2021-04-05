@@ -7,7 +7,9 @@ import {
   selectBox,
   textarea,
   addBtn,
+  dialogHeading,
 } from './Dialog.module.scss';
+import Heading from 'components/Heading/Heading';
 
 const Dialog = ({ headline, buttonText }) => {
   const textareaRef = useRef(null);
@@ -23,15 +25,7 @@ const Dialog = ({ headline, buttonText }) => {
 
   return (
     <form className={dialog}>
-      <h2
-        style={{
-          color: '#FFA1B2',
-          fontSize: 14,
-          marginTop: 0,
-          marginBottom: 5,
-        }}>
-        {headline}
-      </h2>
+      <Heading level={2} children={headline} className={dialogHeading} />
       <Button
         title="close icon"
         shape="close"
