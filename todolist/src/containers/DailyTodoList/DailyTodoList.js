@@ -1,5 +1,8 @@
 import { TodoItem } from 'containers';
 import { todoItem } from './DailyTodoList.module.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { editTodoAction, removeTodoAction } from 'redux/storage/Todos/Todos';
+import { bool } from 'prop-types'
 
 const todos = [
   {
@@ -14,13 +17,15 @@ const todos = [
   },
 ];
 
-const DailyTodoList = ({ className }) => {
+
+
+const DailyTodoList = ({ className, onEdit, onErase, date }) => {
   return (
     <ul className={className}>
       {todos.map(({ id, task, completed }) => {
         return (
-          <li key={id} completed={completed} className={todoItem}>
-            <TodoItem value={task} />
+          <li key={id} className={todoItem}>
+            <TodoItem date={date} id={id} completed={completed} value={task} onEdit={onEdit} onErase={onErase}/>
           </li>
         );
       })}
@@ -29,3 +34,7 @@ const DailyTodoList = ({ className }) => {
 };
 
 export default DailyTodoList;
+
+// DailyTodoList.propTypes = {
+//   completed: bool,
+// }
