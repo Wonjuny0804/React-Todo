@@ -3,8 +3,8 @@ import Portal from 'components/Portal/Portal';
 import { Dialog } from 'containers';
 import './ModalDialog.scss';
 
-// const dialogContainer = document.getElementById('dialog-container');
-// dialogContainer.classList.add('dialogContainer');
+const dialogContainer = document.getElementById('dialog-container');
+dialogContainer.classList.add('dialogContainer');
 
 export default function ModalDialog({ portalId = 'dialog-container' }) {
   return (
