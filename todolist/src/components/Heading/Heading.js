@@ -1,5 +1,4 @@
 import React from 'react';
-// import {} from './Heading.module.scss';
 
 export default function Heading({
   level,
