@@ -11,7 +11,7 @@ const WeeklyTodoList = ({ containerClassName, ...restProps }) => {
   console.log(todoState);
 
 
-  const _todos = useSelector(state => state);
+  const todos = useSelector(state => state);
   const dispatch = useDispatch();
 
 
@@ -21,7 +21,7 @@ const WeeklyTodoList = ({ containerClassName, ...restProps }) => {
 
   const onTodoErase = (date, id) => {
     // get todo
-    const todo = _todos[date].filter(todo => todo.id === id);
+    const todo = todos[date].filter(todo => todo.id === id);
     dispatch(removeTodoAction(date, todo));
   }
 
@@ -32,7 +32,7 @@ const WeeklyTodoList = ({ containerClassName, ...restProps }) => {
         return (
           <li key={key} className={dailyTodoList}>
             <Heading level={2} children={day} className={todoListHeading} />
-            <DailyTodoList date={day} className={`${key}TodoList`} onEdit={onTodoEdit} onErase={onTodoErase}/>
+            <DailyTodoList date={day} className={`${key}TodoList`} onEdit={onTodoEdit} onErase={onTodoErase} todos={todos[day]}/>
           </li>
         );
       })}
