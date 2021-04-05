@@ -11,14 +11,16 @@ import {
 } from './Dialog.module.scss';
 import Heading from 'components/Heading/Heading';
 
-const Dialog = ({ headline, buttonText }) => {
+const Dialog = ({ headline, buttonText, setIsDialogShow }) => {
   const textareaRef = useRef(null);
   const [inputText, setInputText] = useState('');
 
   const handleTextarea = (e) => {
     setInputText(textareaRef.current.value);
   };
-  const handleCloseButton = () => {};
+  const handleCloseButton = () => {
+    setIsDialogShow(false);
+  };
   const handleAddandEditButton = () => {
     console.log(textareaRef.current.value);
   };
