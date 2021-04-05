@@ -1,0 +1,36 @@
+@import 'styles/variables.scss';
+
+.editIcon {
+  &:hover {
+    opacity: 1;
+    path {
+      fill: $white;
+    }
+  }
+
+  opacity: 0.5;
+  path {
+    fill: $white;
+  }
+}
+
+.deleteIcon {
+  opacity: 0.5;
+  path {
+    fill: $white;
+  }
+
+  &:hover {
+    opacity: 1;
+    path {
+      fill: $red;
+    }
+  }
+}
+
+.completed {
+  opacity: 0.5;
+  path {
+    fill: $dark-blue;
+  }
+}
