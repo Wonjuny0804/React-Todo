@@ -1,10 +1,11 @@
-import './App.css';
-import { getThisWeek } from 'utils'
+import Header from 'containers/Header/Header';
+import { getThisWeek } from 'utils';
 
 function App() {
   return (
     <div className="App">
-      { console.log(getThisWeek()) }
+      <Header />
+      {/* {console.log(getThisWeek())} */}
     </div>
   );
 }
