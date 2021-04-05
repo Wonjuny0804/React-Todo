@@ -7,6 +7,9 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const TodoItem = ({ id, date, value, onEdit, onErase }) => {
   const [checked, setChecked] = useState(false);
+
+  const todos = useSelector(state => state);
+  const dispatch = useDispatch();
   
   const editClasses = classNames(editIcon, checked && completed);
   const deleteClasses = classNames(deleteIcon, checked && completed);
@@ -14,6 +17,7 @@ const TodoItem = ({ id, date, value, onEdit, onErase }) => {
   const onTodoStatusChange = (e) => {
     setChecked(e.target.checked);
 
+    
     console.log(e.target);
   };
 
