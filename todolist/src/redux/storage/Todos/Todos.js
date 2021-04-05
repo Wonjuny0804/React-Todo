@@ -6,6 +6,7 @@ const ADD_TODO = 'Add todo';
 const REMOVE_TODO = 'Remove todo';
 const EDIT_TODO = 'Edit todo';
 const READ_ALL_TODOS = 'read all todos';
+const CHECK_TODO = 'Check todo';
 
 /* acttion creators -------------------------------------------------------------------------- */
 
@@ -13,9 +14,12 @@ export const readTodoAction = () => ({
   type: READ_ALL_TODOS,
 });
 
-export const addTodoAction = (newTodo) => ({
+export const addTodoAction = (date, newTodo) => ({
   type: ADD_TODO,
-  payload: newTodo,
+  payload: {
+    date,
+    newTodo,
+  }
 });
 
 export const editTodoAction = (date, willEditTodo) => ({
@@ -26,10 +30,21 @@ export const editTodoAction = (date, willEditTodo) => ({
   },
 });
 
-export const removeTodoAction = (willRemoveTodo) => ({
+export const removeTodoAction = (date, willRemoveTodo) => ({
   type: REMOVE_TODO,
-  payload: willRemoveTodo,
+  payload: {
+    date,
+    willRemoveTodo
+  }
 });
+
+export const checkTodoAction = (date, checkTodo) => ({
+  type: CHECK_TODO,
+  payload: {
+    date,
+    checkTodo
+  }
+})
 
 /* initial state + reducer -------------------------------------------------------------------------- */
 
@@ -46,12 +61,12 @@ export const todoListReducer = (state = initialState, { type, payload }) => {
       return state;
 
     case ADD_TODO:
-      return payload;
+      return { ...state, [payload.date]: [...state[payload.date], payload.newTodo] };
 
     case EDIT_TODO:
       return {
         ...state,
-        date: state[payload.date].map((todo) =>
+        [payload.date]: state[payload.date].map((todo) =>
           todo.id === payload.willEditTodo.id ? payload.willEditTodo : todo
         ),
       };
@@ -59,7 +74,13 @@ export const todoListReducer = (state = initialState, { type, payload }) => {
     case REMOVE_TODO:
       return {
         ...state,
-        date: state[payload.date].filter((todo) => todo.id !== payload.id),
+        [payload.date] : state[payload.date].filter(todo => todo.id !== payload.id),
       };
+    
+    case CHECK_TODO:
+      return {
+        ...state,
+        [payload.date] : state[payload.date].map(todo => todo.id === payload.checkTodo.id ? {...todo, ...payload.checkTodo } : todo)
+      }
   }
 };
