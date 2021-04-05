@@ -9,6 +9,7 @@ const Button = ({
   className,
   title = '',
   shape,
+  iconClassName,
   ...restProps
 }) => {
   const composeClasses = classNames(button, className);
@@ -16,7 +17,7 @@ const Button = ({
   return (
     <button type={type} onClick={onClick} className={composeClasses}>
       {content}
-      {shape && <Icon title={title} shape={shape} />}
+      {shape && <Icon title={title} shape={shape} className={iconClassName} />}
     </button>
   );
 };

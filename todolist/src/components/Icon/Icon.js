@@ -12,16 +12,17 @@ import {
   closeIcon,
   arrowUpIcon,
   arrowDownIcon,
+  nonActive,
 } from './Icon.module.scss';
 
-const Icon = ({ title, shape, completed, ...restProps }) => {
+const Icon = ({ title, shape, completed, iconClassName, ...restProps }) => {
   switch (shape) {
     case 'edit':
       return (
         <EditIcon
           title={title}
           shape={shape}
-          className={editIcon}
+          className={iconClassName}
           completed={completed && false}
           {...restProps}
         />
@@ -31,7 +32,7 @@ const Icon = ({ title, shape, completed, ...restProps }) => {
         <DeleteIcon
           title={title}
           shape={shape}
-          className={deleteIcon}
+          className={iconClassName}
           completed={completed && false}
           {...restProps}
         />
