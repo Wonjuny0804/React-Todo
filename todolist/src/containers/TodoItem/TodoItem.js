@@ -8,6 +8,7 @@ import {
   deleteIcon,
   completed,
 } from './TodoItem.module.scss';
+import { useSelector, useDispatch } from 'react-redux';
 
 const TodoItem = ({ value }) => {
   const [checked, setChecked] = useState(false);
@@ -17,9 +18,16 @@ const TodoItem = ({ value }) => {
 
   const onTodoStatusChange = (e) => {
     setChecked(e.target.checked);
+    console.log(e.target);
   };
   const handleEditDialog = () => {};
   const handleDeleteTodo = () => {};
+
+  const todo = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const onTodoEdit = (e) => {
+    console.log(e.target);
+  };
 
   return (
     <Box active={!checked} className={todoItemContainer}>
@@ -29,7 +37,7 @@ const TodoItem = ({ value }) => {
         type="button"
         shape="edit"
         iconClassName={editClasses}
-        onClick={handleEditDialog}
+        onClick={onTodoEdit}
       />
       <Button
         type="button"

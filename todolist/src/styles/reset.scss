@@ -158,8 +158,15 @@ button {
   user-select: none;
   cursor: pointer;
   outline: none;
+  background: transparent;
+  border: none;
+  font-family: 'Raleway', sans-serif;
 }
 
 textarea {
   font-family: 'Raleway', sans-serif;
+}
+
+svg {
+  pointer-events: none;
 }
