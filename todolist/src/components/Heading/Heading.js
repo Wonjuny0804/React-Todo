@@ -1,5 +1,5 @@
-import React from 'react'
-import {} from './Heading.module.scss'
+import React from 'react';
+// import {} from './Heading.module.scss';
 
 export default function Heading({
   level,
@@ -13,5 +13,5 @@ export default function Heading({
     lang,
     className,
     ...restProps,
-  })
+  });
 }
