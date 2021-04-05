@@ -2,10 +2,14 @@
 
 .todoContainer {
   position: relative;
-  width: 360px;
-  margin: 0 auto;
-  padding: 20px;
-  // overflow-y: auto;
+  width: 410px;
+  max-height: 720px;
+  margin: 80px auto;
+  padding: 50px 40px;
+  background-color: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
 }
 
 .heading {
