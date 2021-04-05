@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+
+.editICon {
+  &:hover {
+    path {
+      fill: $white;
+    }
+  }
+
+  &[completed='true'] {
+    path {
+      fill: $dark-blue;
+    }
+  }
+
+  path {
+    fill: $light-white;
+  }
+}
+
+.deleteIcon {
+  &:hover {
+    path {
+      fill: $red;
+    }
+  }
+
+  &[completed='true'] {
+    path {
+      fill: $dark-blue;
+    }
+  }
+
+  path {
+    fill: $light-white;
+  }
+}
+
+.closeIcon {
+  path {
+    fill: $dark-gray;
+  }
+}
+
+.plusIcon,
+.arrowDownIcon,
+.arrowUpIcon {
+  path {
+    fill: $primary;
+  }
+}
