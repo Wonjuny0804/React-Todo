@@ -1,11 +1,8 @@
 import { TodoItem } from 'containers';
 import { todoItem } from './DailyTodoList.module.scss';
-import { useSelector } from 'react-redux';
 
 
 const DailyTodoList = ({ className, onEdit, onErase, date, todos }) => {
-
-  // const dailyTodo = useSelector(state => state[date]);
 
 
   return (
