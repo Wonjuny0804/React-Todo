@@ -64,6 +64,5 @@ const getThisWeek = () => {
   });
 };
 
-// export default getThisWeek;
+export default getThisWeek;
 
-console.log(getThisWeek());
