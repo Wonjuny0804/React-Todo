@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, Heading } from 'components';
 import { WeeklyTodoList } from 'containers';
 import {
@@ -8,9 +9,16 @@ import {
   plusIcon,
   weeklyTodoList,
 } from './TodoListApp.module.scss';
+import ModalDialog from 'containers/ModalDialog/ModalDialog';
 
 const TodoListApp = () => {
-  const handleOpenDialogButton = () => {};
+  const [isDialogShow, setIsDialogShow] = useState(false);
+  console.log(isDialogShow);
+
+  const showDialog = () => {
+    setIsDialogShow(true);
+    console.log(isDialogShow);
+  };
 
   return (
     <div className={todoContainer}>
@@ -18,12 +26,13 @@ const TodoListApp = () => {
       <p className={text}>This Week</p>
       <Button
         content="Add a task"
-        onClick={handleOpenDialogButton}
+        onClick={showDialog}
         className={addBtn}
         title="plus icon"
         shape="plus"
         iconClassName={plusIcon}
       />
+      {isDialogShow && <ModalDialog />}
       <WeeklyTodoList containerClassName={weeklyTodoList} />
     </div>
   );

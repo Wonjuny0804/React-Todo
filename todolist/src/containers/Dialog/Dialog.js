@@ -29,8 +29,7 @@ const Dialog = ({ headline, buttonText }) => {
           fontSize: 14,
           marginTop: 0,
           marginBottom: 5,
-        }}
-      >
+        }}>
         {headline}
       </h2>
       <Button
@@ -47,8 +46,7 @@ const Dialog = ({ headline, buttonText }) => {
         className={textarea}
         placeholder="Write your task..."
         onChange={handleTextarea}
-        value={inputText}
-      ></textarea>
+        value={inputText}></textarea>
       <Button
         type="submit"
         content={buttonText}
