@@ -8,7 +8,7 @@ import { editTodoAction, removeTodoAction } from 'redux/storage/Todos/Todos';
 const WeeklyTodoList = ({ containerClassName, ...restProps }) => {
   const thisWeek = getThisWeek();
 
-  const _todos = useSelector((state) => state);
+  const todos = useSelector((state) => state.todo);
   const dispatch = useDispatch();
 
   const onTodoEdit = (e) => {
@@ -17,7 +17,7 @@ const WeeklyTodoList = ({ containerClassName, ...restProps }) => {
 
   const onTodoErase = (date, id) => {
     // get todo
-    const todo = _todos[date].filter((todo) => todo.id === id);
+    const todo = todos[date].filter((todo) => todo.id === id);
     dispatch(removeTodoAction(date, todo));
   };
 
@@ -33,7 +33,9 @@ const WeeklyTodoList = ({ containerClassName, ...restProps }) => {
               className={`${key}TodoList`}
               onEdit={onTodoEdit}
               onErase={onTodoErase}
+              todos={todos[day]}
             />
+          {console.log(todos)}
           </li>
         );
       })}
