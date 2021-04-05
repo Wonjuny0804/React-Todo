@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+.todoContainer {
+  position: relative;
+  width: 410px;
+  max-height: 720px;
+  margin: 80px auto;
+  padding: 50px 40px;
+  background-color: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+
+.heading {
+  color: $dark-blue;
+  font-size: 2rem;
+  font-weight: 1000;
+}
+
+.text {
+  margin-top: 10px;
+  color: $dark-blue;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.addBtn {
+  position: absolute;
+  top: 50px;
+  right: 22px;
+  font-size: 1.2rem;
+  color: $primary;
+}
+
+.plusIcon {
+  path {
+    fill: $primary;
+  }
+}
+
+.weeklyTodoList {
+  margin-top: 40px;
+}

@@ -1,10 +1,12 @@
-import './App.css';
+import { TodoListApp } from 'pages';
 
 function App() {
   return (
-    <div className="App">
-    </div>
-  );
+  <>
+    <TodoListApp />
+  </>
+  )
+  ;
 }
 
 export default App;

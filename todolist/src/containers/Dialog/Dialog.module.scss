@@ -1,0 +1,61 @@
+@import '../../styles/variables.scss';
+
+.dialog {
+  position: relative;
+  width: 315px;
+  height: 160px;
+  padding: 13px;
+  background-color: $white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.selectBox {
+  width: 150px;
+}
+
+.textarea {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 8px;
+  padding: 4px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #eee;
+  font-size: 10px;
+  outline: none;
+}
+
+.addBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  width: 50px;
+  height: 20px;
+  padding: 3px 13px;
+  background-color: $secondary;
+  border: none;
+  border-radius: 10px;
+  color: $white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dialogHeading {
+  color: $primary;
+  font-size: 14;
+  margin-top: 0;
+  margin-bottom: 5;
+}

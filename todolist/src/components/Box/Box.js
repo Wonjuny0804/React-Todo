@@ -1,13 +1,10 @@
-import './Box.scss'
+import classNames from 'classnames';
+import { box, nonActive } from './Box.module.scss';
 
-const Box = ({ active, children }) => {
-  return (
-    <div 
-      className={`box ${active || "non-active"}`.trim()} 
-    >
-      {children}
-    </div>
-  )
-}
+const Box = ({ active, className, children }) => {
+  const boxClasses = classNames(className, box, active || nonActive);
 
-export default Box
+  return <div className={boxClasses}>{children}</div>;
+};
+
+export default Box;

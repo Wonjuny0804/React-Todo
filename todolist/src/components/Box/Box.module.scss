@@ -1,15 +1,21 @@
+@import '../../styles/variables.scss';
 
 .box {
   box-sizing: border-box;
   width: 315px;
   height: 50px;
-  background: linear-gradient(91.44deg, #FFA2B2 0%, #FFBAC6 0.01%, #FFBE99 100%);
+  background: linear-gradient(
+    91.44deg,
+    $primary 0%,
+    #ffbac6 0.01%,
+    $secondary 100%
+  );
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   border: none;
   outline: none;
   padding: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
@@ -23,12 +29,12 @@
     width: 20px;
     height: 20px;
   }
-  
-  &.non-active {
-    background: #F5F5F5;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    text-decoration: line-through;
-    color: #CED3E3;
-  }
+}
+
+.nonActive {
+  background: #f5f5f5;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  text-decoration: line-through;
+  color: #ced3e3;
 }

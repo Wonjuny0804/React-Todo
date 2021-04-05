@@ -1,0 +1,47 @@
+@import 'styles/variables.scss';
+
+.todoItemContainer {
+  display: flex;
+  align-items: center;
+}
+
+.todoTask {
+  flex-grow: 1;
+}
+
+.editIcon {
+  margin-right: 10px;
+  &:hover {
+    opacity: 1;
+    path {
+      fill: $white;
+    }
+  }
+
+  opacity: 0.5;
+  path {
+    fill: $white;
+  }
+}
+
+.deleteIcon {
+  margin-right: 4px;
+  opacity: 0.5;
+  path {
+    fill: $white;
+  }
+
+  &:hover {
+    opacity: 1;
+    path {
+      fill: $red;
+    }
+  }
+}
+
+.completed {
+  opacity: 0.5;
+  path {
+    fill: $dark-blue;
+  }
+}

@@ -1,0 +1,28 @@
+@import 'styles/variables.scss';
+
+.addTodoButton {
+  background: transparent;
+  border: none;
+
+  &:hover {
+    Button {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+h3 {
+  display: inline-block;
+  color: $primary;
+  font-weight: 600;
+  padding-right: 0.3em;
+}
+
+.plusIcon {
+  display: inline-block;
+  path {
+    fill: $primary;
+  }
+
+  transition: 0.4s;
+}
