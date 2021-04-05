@@ -13,11 +13,9 @@ import ModalDialog from 'containers/ModalDialog/ModalDialog';
 
 const TodoListApp = () => {
   const [isDialogShow, setIsDialogShow] = useState(false);
-  console.log(isDialogShow);
 
   const showDialog = () => {
     setIsDialogShow(true);
-    console.log(isDialogShow);
   };
 
   return (
