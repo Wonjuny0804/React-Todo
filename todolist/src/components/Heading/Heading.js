@@ -3,7 +3,7 @@ import React from 'react';
 export default function Heading({
   level,
   children,
-  lang,
+  lang = 'en',
   className,
   ...restProps
 }) {

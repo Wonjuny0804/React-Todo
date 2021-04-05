@@ -4,3 +4,4 @@ export { default as Checkbox } from './Checkbox/Checkbox';
 export { default as Button } from './Button/Button';
 export { default as Icon } from './Icon/Icon';
 export { default as SelectBox } from './SelectBox/SelectBox';
+export { default as Heading } from './Heading/Heading';

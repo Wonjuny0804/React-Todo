@@ -1,15 +1,7 @@
-import { TodoItem } from 'containers';
-import Header from 'containers/Header/Header';
-import { getThisWeek } from 'utils';
+import { TodoListApp } from 'pages';
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <TodoItem />
-      {/* {console.log(getThisWeek())} */}
-    </div>
-  );
+  return <TodoListApp />;
 }
 
 export default App;
