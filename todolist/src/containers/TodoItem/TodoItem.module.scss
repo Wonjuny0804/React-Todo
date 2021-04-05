@@ -1,6 +1,16 @@
 @import 'styles/variables.scss';
 
+.todoItemContainer {
+  display: flex;
+  align-items: center;
+}
+
+.todoTask {
+  flex-grow: 1;
+}
+
 .editIcon {
+  margin-right: 10px;
   &:hover {
     opacity: 1;
     path {
@@ -15,6 +25,7 @@
 }
 
 .deleteIcon {
+  margin-right: 4px;
   opacity: 0.5;
   path {
     fill: $white;
