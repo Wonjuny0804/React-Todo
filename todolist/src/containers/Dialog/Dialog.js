@@ -44,6 +44,9 @@ const Dialog = ({ headline, buttonText, setIsDialogShow }) => {
           completed: false,
         })
       );
+
+      // close modal
+      setIsDialogShow(false);
     }
     console.log(state);
   };

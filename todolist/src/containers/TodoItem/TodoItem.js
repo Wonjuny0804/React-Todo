@@ -1,7 +1,7 @@
 import { ContentBox, Box, Checkbox, Button } from '../../components';
 import { useState } from 'react';
 import classNames from 'classnames';
-import { editIcon, deleteIcon, completed } from './TodoItem.module.scss';
+import { editIcon, deleteIcon, completed, todoTask } from './TodoItem.module.scss';
 
 
 const TodoItem = ({ id, date, value, onEdit, onErase }) => {
@@ -19,7 +19,7 @@ const TodoItem = ({ id, date, value, onEdit, onErase }) => {
   return (
     <Box active={!checked}>
       <Checkbox id={'test'} checked={checked} onChange={onTodoStatusChange} />
-      <ContentBox content={value} />
+      <ContentBox content={value} className={todoTask}/>
       <Button type="button" shape="edit" iconClassName={editClasses} onClick={onEdit}/>
       <Button type="button" shape="delete" iconClassName={deleteClasses} onClick={() => onErase(date, id)}/>
     </Box>

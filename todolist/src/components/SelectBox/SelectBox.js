@@ -12,30 +12,34 @@ import {
 import classNames from 'classnames';
 
 const SelectBox = ({ className, setDateState }) => {
+  
+  const thisWeek = getThisWeek();
   const [isOpened, setIsOpened] = useState(false);
+  const [selectDate, setSelectDate] = useState('Date');
+  const selectBoxClasses = classNames(selectBox, isOpened && openedSelectBox);
 
   const selectBoxContainerClasses = classNames(
     className,
     selectBoxContainer,
     isOpened && openedSelectBoxContainer
   );
-  const selectBoxClasses = classNames(selectBox, isOpened && openedSelectBox);
 
   const handleButtonClick = () => {
     setIsOpened(!isOpened);
   };
+
   const handleItemClick = (e) => {
     setDateState(e.target.textContent);
+    setSelectDate(e.target.textContent);
     setIsOpened(false);
   };
 
-  const thisWeek = getThisWeek();
 
   return (
     <div className={selectBoxContainerClasses}>
       <Button
         type="button"
-        content="Date"
+        content={selectDate}
         className={selectButton}
         onClick={handleButtonClick}
         title={isOpened ? 'arrow up icon' : 'arrow down icon'}
