@@ -5,14 +5,14 @@ import classNames from 'classnames';
 const Button = ({
   type = 'button',
   content = null,
-  onClick,
   className,
+  onClick,
   title = '',
   shape,
   iconClassName,
   ...restProps
 }) => {
-  const composeClasses = classNames(button, className);
+  const composeClasses = classNames(button, iconClassName, className);
 
   return (
     <button type={type} onClick={onClick} className={composeClasses}>

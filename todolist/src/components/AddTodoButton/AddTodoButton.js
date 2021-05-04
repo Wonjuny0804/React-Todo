@@ -10,17 +10,17 @@ import { Dialog } from 'containers';
 
 export default function AddTodoButton() {
   const [isDialogShow, setIsDialogShow] = React.useState(false);
-  // const [dialogLabel, setDialogLabel] = React.useStateCallback('');
 
   const showDialog = () => {
     setIsDialogShow(true);
   };
+
   const hideDialog = () => {
     setIsDialogShow(false);
   };
+
   const addTodoDialog = () => {
     showDialog();
-    // setDialogLabel('Add Todo');
   };
 
   return (

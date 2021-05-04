@@ -74,7 +74,7 @@ export const todoListReducer = (state = initialState, { type, payload }) => {
     case REMOVE_TODO:
       return {
         ...state,
-        [payload.date] : state[payload.date].filter(todo => todo.id !== payload.id),
+        [payload.date] : state[payload.date].filter(todo => todo.id !== payload.willRemoveTodo.id),
       };
     
     case CHECK_TODO:
